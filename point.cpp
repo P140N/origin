@@ -21,12 +21,12 @@ Point Point::operator* (double s)
     return Point(s * this ->x, y * this->y);
 }
 
-/*
+
 Point Point::operator [] (int i)
 {
     return (i == 0) ? x : y;
 }
-*/
+
 
 int Point::operator== (Point &p)
 {
@@ -95,7 +95,7 @@ double Point::polarAngle(void)
 
 }
 
-Point Point::length(void)
+double Point::length(void)
 {
     return sqrt(x*x + y*y);
 }

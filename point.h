@@ -10,7 +10,7 @@ public:
     Point operator+ (Point&);
     Point operator- (Point&);
     Point operator* (double);
-    //double operator[](int);
+    double operator[](int);
     int operator== (Point&);
     int operator!= (Point&);
     int operator< (Point&);
