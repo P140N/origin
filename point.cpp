@@ -22,7 +22,7 @@ Point Point::operator* (double s)
 }
 
 
-Point Point::operator [] (int i)
+double Point::operator [] (int i)
 {
     return (i == 0) ? x : y;
 }
