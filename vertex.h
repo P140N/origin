@@ -1,5 +1,7 @@
 #ifndef VERTEX_H
 #define VERTEX_H
+#include "point.h"
+#include "node.h"
 
 class Vertex: public Node, public Point
 {
