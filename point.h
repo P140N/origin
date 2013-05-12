@@ -9,7 +9,7 @@ public:
     Point(double _x = 0.0, double _y = 0.0);
     Point operator+ (Point&);
     Point operator- (Point&);
-    Point operator* (double);
+    friend Point operator* (double, Point&);
     double operator[](int);
     int operator== (Point&);
     int operator!= (Point&);

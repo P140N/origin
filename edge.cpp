@@ -5,6 +5,7 @@ Edge::Edge(Point &_org, Point &_dest) :
 {
 }
 
+
 Edge::Edge(void) :
     org (Point(0,0)), dest(Point(1,0))
 {

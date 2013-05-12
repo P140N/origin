@@ -16,9 +16,9 @@ Point Point::operator- (Point &p)
     return Point(x - p.x, y - p.y);
 }
 
-Point Point::operator* (double s)
+Point operator* (double s, Point &p)
 {
-    return Point(s * this ->x, y * this->y);
+    return Point(s * p.x, s * p.y);
 }
 
 
