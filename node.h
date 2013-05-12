@@ -10,7 +10,7 @@ protected:
 
 public:
     Node(void);
-   virtual ~Node(void);
+    virtual ~Node(void);
     Node *next(void);
     Node *prev(void);
     Node *insert(Node*);  // вставить узел после текущего

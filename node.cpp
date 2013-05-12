@@ -25,6 +25,16 @@ Node *Node::remove(void){
     return this;
 }
 
+Node *Node::insert(Node *b)
+{
+    Node *c = _next;
+    b->_next = c;
+    b->_prev = this;
+    _next = b;
+    c->_prev = b;
+    return b;
+}
+
 void Node::splice(Node *b){
     Node *a = this;
     Node *an = a->_next;

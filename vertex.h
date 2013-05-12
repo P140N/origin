@@ -10,7 +10,7 @@ public:
     Vertex(Point&);
     Vertex *cw(void);
     Vertex *ccw(void);
-    Vertex *neighbor(int rotation);
+   // Vertex *neighbor(int rotation);
     Point point(void);
     Vertex *insert(Vertex*);
     Vertex *remove(void);
