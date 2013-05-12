@@ -22,4 +22,12 @@ public:
     //double distance(Edge&);
 };
 
+
+Point operator* (double s, Point &p)
+{
+    return Point(s * p.x, s * p.y);
+}
+
+
+
 #endif // POINT_H

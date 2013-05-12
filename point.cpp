@@ -15,12 +15,12 @@ Point Point::operator- (Point &p)
 {
     return Point(x - p.x, y - p.y);
 }
-
+/*
 Point operator* (double s, Point &p)
 {
     return Point(s * p.x, s * p.y);
 }
-
+*/
 
 double Point::operator [] (int i)
 {
