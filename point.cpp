@@ -6,12 +6,12 @@ Point::Point(double _x, double _y):
 {
 }
 
-Point Point::operator+ (Point &p)
+Point Point::operator+ (const Point &p)
 {
     return Point(x + p.x, y + p.y);
 }
 
-Point Point::operator- (Point &p)
+Point Point::operator- (const Point &p)
 {
     return Point(x - p.x, y - p.y);
 }
@@ -72,13 +72,13 @@ int Point::classify(Point &p0, Point &p1)
   return BETWEEN;
 }
 
-/*
+
 int Point::classify(Edge &e)
 {
   return classify(e.org, e.dest);
 }
 
-*/
+
 
 double Point::polarAngle(void)
 {

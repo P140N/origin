@@ -16,7 +16,7 @@ Edge &Edge::rot(void)
     Point m = 0.5 * (org + dest);
     Point v = dest - org;
     Point n(v.y, -v.x);
-    org = m - 0.5 * n;
+    org = m.operator-(0.5 * n);
     dest = m + 0.5 * n;
     return *this;
 }
@@ -31,7 +31,7 @@ Point Edge::point(double t)
     return Point(org + t*(dest-org));
 }
 
-double dotProduct(Point &p, Point &q)
+double dotProduct(const Point &p,const Point &q)
 {
   return (p.x * q.x + p.y * q.y);
 }
