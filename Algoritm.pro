@@ -7,7 +7,8 @@ SOURCES += \
     edge.cpp \
     polygon.cpp \
     aimsAt.cpp \
-    advance.cpp
+    advance.cpp \
+    crossingPoint.cpp
 
 HEADERS += \
     algorithm.h \
