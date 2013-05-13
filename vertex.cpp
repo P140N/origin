@@ -49,3 +49,11 @@ void Vertex::splice(Vertex *b)
 {
     Node::splice(b);
 }
+
+Vertex *Vertex::split(Vertex *b)
+{
+    Vertex *bp = b->ccw()->insert(new Vertex(b->point()));
+    insert(new Vertex(point()));
+    splice(bp);
+    return bp;
+}

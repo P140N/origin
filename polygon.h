@@ -23,7 +23,7 @@ public:
     Vertex *setV (Vertex*);
     Vertex *insert (Point&);
     void remove (void);
-    Polygon * split (Vertex*);
+    Polygon *split (Vertex*);
 };
 
 #endif // POLYGON_H

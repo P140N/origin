@@ -5,7 +5,9 @@ SOURCES += \
     point.cpp \
     vertex.cpp \
     edge.cpp \
-    polygon.cpp
+    polygon.cpp \
+    aimsAt.cpp \
+    advance.cpp
 
 HEADERS += \
     algorithm.h \
