@@ -41,7 +41,7 @@ double dotProduct(const Point &p,const Point &q)
 enum {LEFT,  RIGHT,  BEYOND,  BEHIND, BETWEEN, ORIGIN, DESTINATION};
 
 enum { COLLINEAR, PARALLEL, SKEW, SKEW_CROSS, SKEW_NO_CROSS };
-int Edge::intersect(Edge &e, double &t)
+int Edge::intersect(Edge e, double &t)
 {
   Point a = org;
   Point b = dest;

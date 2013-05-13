@@ -12,7 +12,7 @@ public:
     Edge &rot(void);
     Edge &flip(void);
     Point point(double);
-    int intersect(Edge&, double&);
+    int intersect(Edge, double&);
     int cross(Edge&, double&);
     bool isVertical(void);
     double slope(void);

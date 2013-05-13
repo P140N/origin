@@ -56,7 +56,45 @@ int crossingPoint(Edge &e, Edge &f, Point &p)
 }
 
 
+bool clipPolygonToEdge(Polygon &s, Edge &e, Polygon* &result)
+{
+    Polygon *p = new Polygon;
+    Point crossingPt;
+    for(int i = 0; i < s.size(); s.advance(CLOCKWISE), i++)
+    {
+        Point org = s.point();
+        Point dest = s.cw()->point();
+        int orgIsInside = (org.classify(e) != LEFT);
+        int destIsInside = (dest.classify(e) != LEFT);
 
+        if(orgIsInside != destIsInside)
+        {
+            double t;
+            e.intersect(s.edge(), t);
+            crossingPt = e.point(t);
+        }
+        if(orgIsInside && destIsInside)
+        {
+            p->insert(dest);
+        }else if(orgIsInside && !destIsInside)
+        {
+            if (org != crossingPt)
+                p->insert(crossingPt);
+        }else if(!orgIsInside && !destIsInside)
+            ; //nothing is done
+        else
+        {
+            p->insert(crossingPt);
+            if (dest != crossingPt)
+                p->insert(dest);
+        }
+
+    }
+
+    result = p;
+    return (p->size() > 0);
+
+}
 
 
 
