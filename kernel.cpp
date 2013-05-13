@@ -78,7 +78,7 @@ Polygon *convexPolygonlntersect(Polygon &P, Polygon &Q)
     int pclass = p.dest.classify (q);
     int qclass = q.dest.classify (p);
     int crossType = crossingPoint (p, q, iPnt);
-    if (crossType = SKEW_CROSS) {
+    if (crossType == SKEW_CROSS) {
       if (phase==1) {
         phase = 2;
         R = new Polygon;
@@ -93,7 +93,7 @@ Polygon *convexPolygonlntersect(Polygon &P, Polygon &Q)
       if (pclass==RIGHT) inflag = P_IS_INSIDE;
       else if (qclass=RIGHT) inflag = Q_IS_INSIDE;
       else inflag = UNKNOWN;
-    } else if ( (crossType == COLLINEAR) && (pclass != BEHIND) && (qclass ! = BEHIND) )
+    } else if ( (crossType == COLLINEAR) && (pclass != BEHIND) && (qclass != BEHIND) )
       inflag = UNKNOWN;
     bool pAIMSq = aimsAt(p, q, pclass, crossType);
     bool qAIMSp = aimsAt(q, p, qclass, crossType);
@@ -107,7 +107,7 @@ Polygon *convexPolygonlntersect(Polygon &P, Polygon &Q)
     } else if (qAIMSp) {
       advance (Q, *R, inflag == Q_IS_INSIDE);
     } else {
-      if ((inflag == Q_IS_INSIDE) ((inflag == UNKNOWN) && (pclass == LEFT)))
+      if ((inflag == Q_IS_INSIDE) || (inflag == UNKNOWN) && (pclass == LEFT))
         advance ( P , *R , FALSE );
       else
         advance (Q, *R, FALSE);
