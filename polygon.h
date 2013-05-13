@@ -21,7 +21,7 @@ public:
     Vertex *neighbor (int rotation);
     Vertex *advance (int rotation);
     Vertex *setV (Vertex*);
-    Vertex *insert (Point&);
+    Vertex *insert (Point);
     void remove (void);
     Polygon *split (Vertex*);
 };

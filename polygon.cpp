@@ -105,7 +105,7 @@ Vertex *Polygon::setV(Vertex *v)
 }
 
 
-Vertex *Polygon::insert(Point &p)
+Vertex *Polygon::insert(Point p)
 {
   if (_size++ == 0)
     _v = new Vertex(p);

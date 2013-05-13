@@ -33,7 +33,7 @@ int Point::operator== (Point &p)
   return (x == p.x) && (y == p.y);
 }
 
-int Point::operator!= (Point &p)
+int Point::operator!= (Point p)
 {
   return !(*this == p);
 }

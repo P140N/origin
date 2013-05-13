@@ -15,7 +15,7 @@ public:
     friend Point operator* (double, Point);
     double operator[](int);
     int operator== (Point&);
-    int operator!= (Point&);
+    int operator!= (Point);
     int operator< (Point&);
     int operator> (Point&);
     int classify (Point&, Point&);
