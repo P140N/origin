@@ -1,8 +1,8 @@
 #ifndef POINT_H
 #define POINT_H
-#include "edge.h"
+//#include "edge.h"
 
-
+class Edge;
 
 class Point
 {

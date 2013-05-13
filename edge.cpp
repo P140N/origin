@@ -1,4 +1,5 @@
 #include "edge.h"
+#include "point.h"
 
 Edge::Edge(Point &_org, Point &_dest) :
     org(_org), dest(_dest)
