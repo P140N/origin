@@ -2,6 +2,8 @@
 #define POINT_H
 #include "edge.h"
 
+
+
 class Point
 {
 public:

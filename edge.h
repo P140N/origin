@@ -1,12 +1,13 @@
 #ifndef EDGE_H
 #define EDGE_H
-#include "point.h"
+
+class Point;
 
 class Edge
 {
 public:
-    Point org;
-    Point dest;
+    Point *org;
+    Point *dest;
     Edge(Point &_org, Point &_dest);
     Edge(void);
     Edge &rot(void);
