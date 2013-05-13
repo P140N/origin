@@ -47,7 +47,7 @@ void Polygon::resize (void)
 Polygon::~Polygon (void)
 {
   if (_v) {
-    Vertex *w = _v- >cw();
+    Vertex *w = _v->cw();
     while (_v != w) {
       delete w->remove();
       w = _v->cw();
