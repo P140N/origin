@@ -7,7 +7,7 @@ class Edge
 public:
     Point org;
     Point dest;
-    Edge(Point &_org, Point &_dest);
+    Edge(const Point &_org,const Point &_dest);
     Edge(void);
     Edge &rot(void);
     Edge &flip(void);

@@ -1,7 +1,8 @@
 #include "edge.h"
 #include "point.h"
+#include "float.h"
 
-Edge::Edge(Point &_org, Point &_dest) :
+Edge::Edge(const Point &_org,const Point &_dest) :
     org(_org), dest(_dest)
 {
 }

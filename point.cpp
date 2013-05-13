@@ -110,7 +110,7 @@ double Point::distance(Edge &e)
                                // n = вектор, перпендикулярный ребру е
   n = (1.0 / n.length()) * n;
                                // нормализация вектора n
-  Edge f(*this, (*this + n));
+  Edge f(*this, *this + n);
                               // ребро f = n позиционируется
                               // на текущей точке
   double t;                   // t = расстоянию со знаком
