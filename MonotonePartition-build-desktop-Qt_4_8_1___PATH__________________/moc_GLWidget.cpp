@@ -1,13 +1,13 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'GLWidget.h'
 **
-** Created: Mon May 13 19:45:34 2013
+** Created: Mon May 13 21:15:39 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../Alg/GLWidget.h"
+#include "../GLWidget.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'GLWidget.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
