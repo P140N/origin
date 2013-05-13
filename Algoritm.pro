@@ -6,9 +6,8 @@ SOURCES += \
     vertex.cpp \
     edge.cpp \
     polygon.cpp \
-    aimsAt.cpp \
-    advance.cpp \
-    crossingPoint.cpp
+    convexPolygonlntersect.cpp \
+    kernel.cpp
 
 HEADERS += \
     algorithm.h \
