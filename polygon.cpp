@@ -113,14 +113,7 @@ Vertex Polygon::insert(Point &p)
     _v = _v->insert(new Vertex(p));
   return _v;
 }
-Vertex Polygon::insertt(Point p)
-{
-  if (_size++ == 0)
-    _v = new Vertex(p);
-  else
-    _v = _v->insert(new Vertex(p));
-  return _v;
-}
+
 
 
 void Polygon::remove(void)
