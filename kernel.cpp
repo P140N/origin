@@ -91,7 +91,7 @@ Polygon *convexPolygonlntersect(Polygon &P, Polygon &Q)
           return R;
       }
       if (pclass==RIGHT) inflag = P_IS_INSIDE;
-      else if (qclass=RIGHT) inflag = Q_IS_INSIDE;
+      else if (qclass==RIGHT) inflag = Q_IS_INSIDE;
       else inflag = UNKNOWN;
     } else if ( (crossType == COLLINEAR) && (pclass != BEHIND) && (qclass != BEHIND) )
       inflag = UNKNOWN;
