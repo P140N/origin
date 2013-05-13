@@ -107,7 +107,7 @@ Polygon *convexPolygonlntersect(Polygon &P, Polygon &Q)
     } else if (qAIMSp) {
       advance (Q, *R, inflag == Q_IS_INSIDE);
     } else {
-      if ((inflag == Q_IS_INSIDE) || (inflag == UNKNOWN) && (pclass == LEFT))
+      if ((inflag == Q_IS_INSIDE) || ((inflag == UNKNOWN) && (pclass == LEFT)))
         advance ( P , *R , FALSE );
       else
         advance (Q, *R, FALSE);
