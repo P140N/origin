@@ -1,5 +1,6 @@
 #include "point.h"
 #include "math.h"
+#include "edge.h"
 
 Point::Point(double _x, double _y):
     x(_x), y(_y)
