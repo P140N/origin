@@ -6,6 +6,8 @@ Polygon::Polygon(void) :
 {
 }
 
+enum {CLOCKWISE, COUNTER_CLOCKWISE };
+
 Polygon::Polygon(Polygon &p)
 {
     _size = p._size;

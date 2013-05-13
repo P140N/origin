@@ -22,6 +22,8 @@ Vertex *Vertex::ccw(void)
 }
 
 
+enum {CLOCKWISE, COUNTER_CLOCKWISE };
+
 Vertex *Vertex::neighbor(int rotation)
 {
     return ((rotation == CLOCKWISE) ? cw() : ccw());
