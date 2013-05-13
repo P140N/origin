@@ -19,7 +19,7 @@ int crossingPoint(Edge &e, Edge &f, Point &p)
       if (t <= EPSILON2*lenf) p = f.org;
       else if (t >= 1.0-EPSILON2*lenf) p = f.dest;
       else if (s <= EPSILON2*lene) p = e.org;
-      else if (a >= 1.0-EPSILON2*lene) p = e.dest;
+      else if (s >= 1.0-EPSILON2*lene) p = e.dest;
       else p = f.point(t);
         return SKEW_CROSS;
     } else
