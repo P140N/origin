@@ -5,9 +5,7 @@ SOURCES += \
     point.cpp \
     vertex.cpp \
     edge.cpp \
-    polygon.cpp \
-    convexPolygonlntersect.cpp \
-    kernel.cpp
+    polygon.cpp
 
 HEADERS += \
     algorithm.h \
