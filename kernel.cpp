@@ -1,4 +1,5 @@
 #include "polygon.h"
+#include "float.h"
 #include "edge.h"
 
 enum{CLOCKWISE};
@@ -30,6 +31,7 @@ bool aimsAt(Edge &a, Edge &b, int aclass, int crossType)
 }
 
 #define EPSILON2 1E-10
+
 
 
 
@@ -184,4 +186,41 @@ Polygon *convexPolygonlntersect(Polygon &P, Polygon &Q)
   else if (pointInConvexPolygon (Q.point(), P) )
     return new Polygon(Q);
   return new Polygon;
+}
+
+
+Polygon *halfplaneIntersect(Edge H[], int n, Polygon &box)
+{
+    Polygon *c;
+    if (n == 1)
+    {
+        clipPolygonToEdge (box, H[0], c);
+    }else
+    {
+        int m = n / 2;
+        Polygon *a = halfplaneIntersect(H, m, box);
+        Polygon *b = halfplaneIntersect(H+m, n-m, box);
+        c = convexPolygonlntersect(*a, *b);
+        delete a;
+        delete b;
+    }
+    return c;
+
+}
+
+
+Polygon *kernel(Polygon &p)
+{
+    Edge *edges = new Edge[p.size()];
+    for (int i = 0; i < p.size(); i++, p.advance(CLOCKWISE))
+        edges[i] = p.edge();
+    Polygon box;
+    box.insert(Point(-DBL_MAX, -DBL_MAX));
+    box.insert(Point(-DBL_MAX, DBL_MAX));
+    box.insert(Point(DBL_MAX, DBL_MAX));
+    box.insert(Point(DBL_MAX, -DBL_MAX));
+    Polygon *r = halfplaneIntersect(edges, p.size(), box);
+    delete edges;
+    return r;
+
 }
