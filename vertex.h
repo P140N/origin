@@ -7,7 +7,7 @@ class Vertex: public Node, public Point
 {
 public:
     Vertex(double x, double y);
-    Vertex(Point&);
+    Vertex(Point);
     Vertex *cw(void);
     Vertex *ccw(void);
     Vertex *neighbor(int rotation);

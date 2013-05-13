@@ -6,7 +6,7 @@ Point(x, y)
 {
 }
 
-Vertex::Vertex(Point &p):
+Vertex::Vertex(Point p):
     Point (p)
 {
 }
