@@ -100,3 +100,21 @@ double Point::length(void)
 {
     return sqrt(x*x + y*y);
 }
+
+double Point::distance(Edge &e)
+{
+  Edge ab = e;
+  ab.flip().rot();             // поворот ab на 90 градусов
+                               // против часовой стрелки
+  Point n(ab.dest -  ab.org);
+                               // n = вектор, перпендикулярный ребру е
+  n = (1.0 / n.length()) * n;
+                               // нормализация вектора n
+  Edge f(*this, (*this + n));
+                              // ребро f = n позиционируется
+                              // на текущей точке
+  double t;                   // t = расстоянию со знаком
+  f.intersect(e, t);          // вдоль вектора f до точки,
+                              // в которой ребро f пересекает ребро е
+  return t;
+}
