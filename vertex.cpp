@@ -21,12 +21,12 @@ Vertex *Vertex::ccw(void)
     return (Vertex*)_prev;
 }
 
-/*
+
 Vertex *Vertex::neighbor(int rotation)
 {
     return ((rotation == CLOCKWISE) ? cw() : ccw());
 }
-*/
+
 
 Point Vertex::point(void)
 {

@@ -12,7 +12,7 @@ public:
     Point(double _x = 0.0, double _y = 0.0);
     Point operator+ (const Point&);
     Point operator- (const Point&);
-    friend Point operator* (double, Point&);
+    friend Point operator* (double, Point);
     double operator[](int);
     int operator== (Point&);
     int operator!= (Point&);
@@ -26,10 +26,7 @@ public:
 };
 
 
-Point operator* (double s, const Point &p)
-{
-    return Point(s * p.x, s * p.y);
-}
+
 
 
 
