@@ -1,4 +1,4 @@
-#include "polygon.h"
+#include "edge.h"
 
 #define EPSILON2 1E-10
 
