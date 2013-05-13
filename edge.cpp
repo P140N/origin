@@ -37,6 +37,8 @@ double dotProduct(const Point &p,const Point &q)
   return (p.x * q.x + p.y * q.y);
 }
 
+enum {LEFT,  RIGHT,  BEYOND,  BEHIND, BETWEEN, ORIGIN, DESTINATION};
+
 enum { COLLINEAR, PARALLEL, SKEW, SKEW_CROSS, SKEW_NO_CROSS };
 int Edge::intersect(Edge &e, double &t)
 {
