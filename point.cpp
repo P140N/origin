@@ -28,7 +28,7 @@ double Point::operator [] (int i)
 }
 
 
-int Point::operator== (Point &p)
+int Point::operator== (Point p)
 {
   return (x == p.x) && (y == p.y);
 }
@@ -73,7 +73,7 @@ int Point::classify(Point &p0, Point &p1)
 }
 
 
-int Point::classify(Edge &e)
+int Point::classify(Edge e)
 {
   return classify(e.org, e.dest);
 }

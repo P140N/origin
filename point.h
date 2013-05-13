@@ -14,12 +14,12 @@ public:
     Point operator- (const Point&);
     friend Point operator* (double, Point);
     double operator[](int);
-    int operator== (Point&);
+    int operator== (Point);
     int operator!= (Point);
     int operator< (Point&);
     int operator> (Point&);
     int classify (Point&, Point&);
-    int classify (Edge&);
+    int classify (Edge);
     double polarAngle(void);
     double length (void);
     double distance(Edge&);

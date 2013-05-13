@@ -3,8 +3,7 @@
 
 enum{CLOCKWISE};
 enum{SKEW_NO_CROSS, SKEW_CROSS, PARALLEL};
-enum{COLLINEAR, RIGHT, LEFT, BEYOND, BEHIND, FALSE};
-
+enum{COLLINEAR, RIGHT, LEFT, BEYOND, BEHIND, FALSE, TRUE, ORIGIN, BETWEEN, DESTINATION};
 enum { UNKNOWN, P_IS_INSIDE, Q_IS_INSIDE};
 
 void advance (Polygon &A, Polygon &R, int inside)
@@ -58,8 +57,36 @@ int crossingPoint(Edge &e, Edge &f, Point &p)
 
 
 
-#include "edge.h"
-#include "polygon.h"
+
+
+
+
+bool pointInConvexPolygon(Point s, Polygon &p)
+{
+    if (p.size() == 1)
+    {
+        return (s == p.point());
+    }
+    if(p.size() == 2)
+    {
+        int c = s.classify(p.edge());
+        return ((c == BETWEEN) || (c == ORIGIN) || (c == DESTINATION));
+    }
+
+    Vertex *org = p.v();
+    for (int i = 0; i < p.size(); i++, p.advance(CLOCKWISE))
+    {
+        if (s.classify(p.edge()) == LEFT)
+        {
+            p.setV(org);
+            return FALSE;
+        }
+    }
+
+    return TRUE;
+}
+
+
 
 
 
@@ -114,7 +141,7 @@ Polygon *convexPolygonlntersect(Polygon &P, Polygon &Q)
     }
   }
                                       // конец цикла for
-  if (pointInConvexPolygon ( P.point (), Q) )
+  if (pointInConvexPolygon ( P.point(), Q) )
     return new Polygon (P);
   else if (pointInConvexPolygon (Q.point(), P) )
     return new Polygon(Q);
