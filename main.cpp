@@ -2,6 +2,7 @@
 #include "float.h"
 #include "edge.h"
 #define EPSILON2 1E-10
+#include <iostream>;
 
 enum{CLOCKWISE};
 enum{SKEW_NO_CROSS, SKEW_CROSS, PARALLEL};
@@ -12,7 +13,7 @@ void advance (Polygon &A, Polygon &R, int inside)
 {
   A. advance (CLOCKWISE);
   if (inside && (R.point() != A.point ()))
-    R.insert (A.point());
+    R.insertt (A.point());
 }
 
 
@@ -216,10 +217,10 @@ Polygon *kernel(Polygon &p)
     for (int i = 0; i < p.size(); i++, p.advance(CLOCKWISE))
         edges[i] = p.edge();
     Polygon box;
-    box.insert(Point(-DBL_MAX, -DBL_MAX));
-    box.insert(Point(-DBL_MAX, DBL_MAX));
-    box.insert(Point(DBL_MAX, DBL_MAX));
-    box.insert(Point(DBL_MAX, -DBL_MAX));
+    box.insertt(Point(-DBL_MAX, -DBL_MAX));
+    box.insertt(Point(-DBL_MAX, DBL_MAX));
+    box.insertt(Point(DBL_MAX, DBL_MAX));
+    box.insertt(Point(DBL_MAX, -DBL_MAX));
     Polygon *r = halfplaneIntersect(edges, p.size(), box);
     delete edges;
     return r;
@@ -244,7 +245,11 @@ Polygon *kernel(Polygon &p)
 
 int main(){
 
+Polygon polygon;
+
+Point p(1.0, 2.0) ;
+polygon.insert(p);
 
 
-return 0;
+//return 0;
 }

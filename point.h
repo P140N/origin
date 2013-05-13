@@ -10,8 +10,8 @@ public:
     double x;
     double y;
     Point(double _x = 0.0, double _y = 0.0);
-    Point operator+ (const Point&);
-    Point operator- (const Point&);
+    Point operator+ ( Point);
+    Point operator- ( Point);
     friend Point operator* (double, Point);
     double operator[](int);
     int operator== (Point);

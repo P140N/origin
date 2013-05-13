@@ -10,7 +10,7 @@ class Polygon
 public:
     Polygon (void);
     Polygon (Polygon&);
-    Polygon (Vertex*);
+    Polygon (Vertex* v);
     ~Polygon (void);
     Vertex *v(void);
     int size (void);
@@ -21,7 +21,8 @@ public:
     Vertex *neighbor (int rotation);
     Vertex *advance (int rotation);
     Vertex *setV (Vertex*);
-    Vertex *insert (Point);
+    Vertex *insert (Point&);
+    Vertex *insertt (Point);
     void remove (void);
     Polygon *split (Vertex*);
 };
