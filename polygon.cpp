@@ -1,5 +1,6 @@
 #include "polygon.h"
 #include <cstddef>
+#include "edge.h"
 
 Polygon::Polygon(void) :
   _v(NULL) , _size(0)
