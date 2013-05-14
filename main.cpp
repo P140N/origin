@@ -4,10 +4,7 @@
 #define EPSILON2 1E-10
 #include <iostream>
 
-enum{CLOCKWISE};
-enum{SKEW_NO_CROSS, SKEW_CROSS, PARALLEL};
-enum{COLLINEAR, RIGHT, LEFT, BEYOND, BEHIND, FALSE, TRUE, ORIGIN, BETWEEN, DESTINATION};
-enum { UNKNOWN, P_IS_INSIDE, Q_IS_INSIDE};
+enum{CLOCKWISE,SKEW_NO_CROSS, SKEW_CROSS, PARALLEL,COLLINEAR, RIGHT, LEFT, BEYOND, BEHIND, FALSE, TRUE, ORIGIN, BETWEEN, DESTINATION,UNKNOWN, P_IS_INSIDE, Q_IS_INSIDE,SKEW};
 
 void advance (Polygon A, Polygon R, int inside)
 {
@@ -252,10 +249,10 @@ Point pp3(6.0,6.0); p1.insert(pp3);
 Point pp4(4.0,4.0); p1.insert(pp4);
 
 Polygon p2;
-Point pp11(1.0,2.0); p2.insert(pp11);
-Point pp12(2.0,2.0); p2.insert(pp12);
-Point pp13(2.0,1.0); p2.insert(pp13);
-Point pp14(1.0,1.0); p2.insert(pp14);
+Point pp11(2.0,1.0); p2.insert(pp11);
+Point pp12(1.0,1.0); p2.insert(pp12);
+Point pp13(2.0,2.0); p2.insert(pp13);
+Point pp14(1.0,2.0); p2.insert(pp14);
 
 Polygon *result = convexPolygonlntersect(p1, p2);
 

@@ -21,8 +21,7 @@ Vertex *Vertex::ccw(void)
     return (Vertex*)_prev;
 }
 
-
-enum {CLOCKWISE, COUNTER_CLOCKWISE };
+enum{CLOCKWISE,SKEW_NO_CROSS, SKEW_CROSS, PARALLEL,COLLINEAR, RIGHT, LEFT, BEYOND, BEHIND, FALSE, TRUE, ORIGIN, BETWEEN, DESTINATION,UNKNOWN, P_IS_INSIDE, Q_IS_INSIDE,SKEW};
 
 Vertex *Vertex::neighbor(int rotation)
 {
