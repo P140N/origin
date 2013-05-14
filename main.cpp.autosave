@@ -255,7 +255,7 @@ Polygon p2;
 Point pp11(1.0,2.0); p2.insert(pp11);
 Point pp12(2.0,2.0); p2.insert(pp12);
 Point pp13(2.0,1.0); p2.insert(pp13);
-Point pp14(1.0,1.0); p2.insert(pp14);
+Point pp14(1.0,2.0); p2.insert(pp14);
 
 Polygon *result = convexPolygonlntersect(p1, p2);
 
